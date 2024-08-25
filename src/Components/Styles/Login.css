@@ -48,6 +48,10 @@
     outline: none;
 }
 
+#emailInput::placeholder{
+    color: black;
+}
+
 #passwordInput {
     font-size: medium;
     border: none;
@@ -61,6 +65,10 @@
     outline: none;
 }
 
+#passwordInput::placeholder{
+    color: black;
+}
+
 #loginBtn2 {
     font-size: larger;
     background-color: red;
@@ -71,4 +79,10 @@
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.back-register{
+    display: flex;
+  }

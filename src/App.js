@@ -18,10 +18,10 @@ function App() {
 
     function changetheme(){
     if(bodycolor === "white"){
-        setBodycolor("#1E201E")
+        setBodycolor("#55679C")
         setButtoncolor("white")
         setFontcolor("white")
-        setHeadercolor("#1E201E")
+        setHeadercolor("#55679C")
         setBorder("white")
         setThead("white")
     }

@@ -1,40 +1,48 @@
-.edit-container h1{
+.edit-container h1 {
     text-align: center;
     text-wrap: wrap;
 }
-.update-dialog dialog{
-  margin:auto auto auto auto;
-  background-color: rgb(138, 196, 233);
-  scrollbar-width: none;
-  border: none;
-  border-radius: 12px;
+
+.update-dialog dialog {
+    margin: auto auto auto auto;
+    background-color: rgb(138, 196, 233);
+    scrollbar-width: none;
+    border: none;
+    border-radius: 12px;
 }
 
-#dept{
+#dept {
     padding: 5px;
 }
-#gen{
+
+#gen {
     padding: 5px;
 }
-button{
+
+button {
     cursor: pointer;
     font-weight: 700;
 }
-.edit-heading{
+
+.edit-heading {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 5px;
+    align-items: center;
 }
-.edit-heading button{
+
+.edit-heading button {
     background: none;
     font-size: 20px;
     color: black;
 }
-.table-head th{
+
+.table-head th {
     background-color: bisque;
 }
-.table-body input{
+
+.table-body input {
     outline: none;
     border: none;
 }

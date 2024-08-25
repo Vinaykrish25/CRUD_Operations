@@ -1,3 +1,7 @@
+#total-container{
+    height: 100vh;
+}
+
 table,tr,th,td{
     padding: 10px;
     align-items: center;
@@ -10,7 +14,6 @@ table,tr,td,th{
 th{
     background-color: aquamarine;
 }
-
 
 #delete,table,tr{
     border: none;
@@ -27,7 +30,7 @@ th{
 .task-table-container{
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin: auto auto auto auto;
 }
 
 #delete-button{

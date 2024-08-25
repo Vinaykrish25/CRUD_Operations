@@ -3,10 +3,11 @@
 }
 .header-container{
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    padding-left: 20px;
     padding-right: 20px;
     padding-top: 10px;
-    background-color: red;
+    align-items: center;
     height: 50px;
 }
 .switch {

@@ -8,7 +8,7 @@ const FrontPage = () => {
     const { fontcolor, bodycolor } = useContext(ThemeContext)
     return (
         <div className='container' style={{ backgroundColor: bodycolor, color: fontcolor }}>
-            <h1>Welcome to Task Manager ✨</h1>
+            <h1>Welcome to Task Manager 📝</h1>
             <h1 style={{ fontSize: "180px" }}><MdAccountCircle /></h1>
             <div className="but">
                 <Link to="/register"><button className='but-1'>Sign Up</button></Link>

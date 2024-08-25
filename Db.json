@@ -1,54 +1,14 @@
 {
   "user-details": [
     {
-      "id": "2352352",
-      "fullname": "asfasfs",
-      "mail": "ACDa@gmail.com",
-      "dob": "2024-08-24",
-      "mobile": "918754345330",
-      "gender": "Male",
-      "dept": "AI&DS",
-      "password": "BDKJG@43312"
-    },
-    {
-      "id": "683916240124",
-      "fullname": "gsudgADJK",
-      "mail": "GBkdg@gmail.com",
-      "dob": "2024-08-25",
-      "mobile": "918754345330",
-      "gender": "Male",
-      "dept": "ECE",
-      "password": "Vinay@123"
-    },
-    {
-      "id": "8263126401",
-      "fullname": "Vinay",
-      "mail": "vinay@gmail.com",
-      "dob": "2024-10-29",
-      "mobile": "918754345330",
-      "gender": "Male",
-      "dept": "AI&DS",
-      "password": "Vinay@123"
-    },
-    {
       "id": "730321243031",
       "fullname": "Vinaykrishna B",
-      "mail": "vinaykrish2002@gmail.com",
+      "mail": "vinaykrish5330@gmail.com",
       "dob": "2002-08-25",
       "mobile": "918754345330",
       "gender": "Male",
       "dept": "AI&DS",
       "password": "Vinay@123"
-    },
-    {
-      "id": "730321114015",
-      "fullname": "Ezhilan S",
-      "mail": "ezhilsampath4@gmail.com",
-      "dob": "2003-11-04",
-      "mobile": "919363155257",
-      "gender": "Male",
-      "dept": "AI&DS",
-      "password": "Ezhil@123"
     }
   ]
 }

@@ -3,7 +3,8 @@ import { FaXmark } from "react-icons/fa6";
 import "./Styles/Login.css";
 import { ThemeContext } from '../Context/ThemeContext';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { IoIosArrowBack } from "react-icons/io";
 
 const Login = () => {
 
@@ -19,8 +20,9 @@ const Login = () => {
     async function handleSubmit(email, password) {
         const response = await axios.get(`http://localhost:3000/user-details`)
         const getEmail = response.data.filter((useremail) => useremail.mail === email)
-        
-        if((email && password) !== ''){
+        console.log(getEmail);
+
+        if ((email && password) !== '') {
             if (getEmail.length !== 0) {
                 getEmail.forEach(checkuser => {
                     if (checkuser.password === password) {
@@ -28,12 +30,12 @@ const Login = () => {
                         setTimeout(function navigateLogin() {
                             navigate("/taskmanager");
                         }, 1000)
-    
+
                     }
                     else {
                         setErr("Login Failed❌");
                         setTimeout(function navigateRegister() {
-                            navigate("/register");
+                            setErr("Please Try Again")
                         }, 1000)
                     }
                 });
@@ -41,12 +43,11 @@ const Login = () => {
             else {
                 setErr("Email doesn't exist")
                 setTimeout(function navigateRegister() {
-                    navigate("/register");
+                    setErr("Please Try Again")
                 }, 1000)
             }
         }
-        else
-        {
+        else {
             setErr("Enter the credentials")
         }
     }
@@ -54,7 +55,7 @@ const Login = () => {
     return (
         <div id='login-container' style={{ backgroundColor: bodycolor, color: fontcolor }}>
             <div id="Container">
-                <p style={{ color: "red", textAlign: "center" }}>{err}</p>
+                <p style={{ color: "red", textAlign: "center"}}>{err}</p>
                 <p id="loginHead">Login</p>
                 <div id="loginInputs">
                     <fieldset style={{ borderColor: color }}>
@@ -85,6 +86,7 @@ const Login = () => {
                     </fieldset>
                 </div>
                 <button id="loginBtn2" onClick={() => handleSubmit(email, password)}>Login</button>
+                <Link to="/register"><h4><IoIosArrowBack />Register</h4></Link>
             </div>
         </div>
     )

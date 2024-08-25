@@ -4,6 +4,7 @@ import { } from "react-icons/fa";
 import { ThemeContext } from '../Context/ThemeContext';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
+import { IoIosArrowBack } from "react-icons/io";
 
 const Register = () => {
   const { bodycolor, fontcolor } = useContext(ThemeContext);
@@ -70,6 +71,9 @@ const Register = () => {
 
   return (
     <div className="signup-container" style={{ backgroundColor: bodycolor, color: fontcolor }}>
+      <div className="back-login">
+        <Link to="/login"><h4><IoIosArrowBack />Login</h4></Link>
+      </div>
       <p style={{ color: "red", textAlign: "center" }}>{err}</p>
       <h1 id='title'>Register Form</h1>
       <div className="form-group">

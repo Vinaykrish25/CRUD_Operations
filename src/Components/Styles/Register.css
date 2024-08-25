@@ -68,3 +68,6 @@
     width: 160px;
     padding: 5px;
   }
+ .back-login{
+  display: flex;
+ }

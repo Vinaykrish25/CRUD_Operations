@@ -16,25 +16,30 @@ const TaskManager = () => {
   const deleteModalRef = useRef();
   const updateModalRef = useRef();
 
+  // Fetches initial data
+  useEffect(() => {
+    showDetails();
+  }, []);
+
   //Opens Delete Confirmation
-  function deleteTask(id) {
+  const deleteTask = (id) => {
     setSelectId(id);
     deleteModalRef.current.showModal();
-  }
+  };
 
-  //open update modalwindow
-  function updateTask(id) {
-    setSelectId(id)
+  // Opens update modal window
+  const updateTask = (item) => {
+    setSelectId(item.id);
     updateModalRef.current.showModal();
-  }
+  };
 
-  //close taskUpdation
-  function closeUpdation(){
+  // Closes the update modal window
+  const closeUpdateModal = () => {
     updateModalRef.current.close();
-  }
+  };
 
-  //deletes from json file
-  async function confirmDelete() {
+  // Deletes the selected task from the JSON file
+  const confirmDelete = async () => {
     try {
       await axios.delete(`http://localhost:3000/user-details/${selectId}`);
       setTasks(tasks.filter((info) => info.id !== selectId));
@@ -44,20 +49,21 @@ const TaskManager = () => {
     } catch (error) {
       console.error('Error while deleting...', error);
     }
-  }
+  };
 
-  useEffect(() => {
-    showDetails();
-  }, [tasks]);
-
-  //shows data in the table
-  async function showDetails() {
-    const response = await axios.get(`http://localhost:3000/user-details`);
-    setTasks(response.data);
-  }
+  // Fetches and displays data in the table
+  const showDetails = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3000/user-details`);
+      setTasks(response.data);
+    } catch (error) {
+      console.error('Error fetching data...', error);
+    }
+  };
 
   return (
-    <div className='task-table-container' style={{ backgroundColor: bodycolor }}>
+    <div id='total-container' style={{ backgroundColor: bodycolor }}>
+    <div className='task-table-container'>
       <table style={{ width: '100%' }}>
         <thead>
           <tr>
@@ -68,6 +74,7 @@ const TaskManager = () => {
             <th>Mobile</th>
             <th>D.O.B</th>
             <th>Gender</th>
+            <th colSpan={2}>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -86,7 +93,7 @@ const TaskManager = () => {
                 </button>
               </td>
               <td id='edit'>
-                <button id='edit-button' style={{ color: fontcolor }} onClick={() => updateTask(item.id)}>
+                <button id='edit-button' style={{ color: fontcolor }} onClick={() => updateTask(item)}>
                   <FaEdit />
                 </button>
               </td>
@@ -95,7 +102,8 @@ const TaskManager = () => {
         </tbody>
       </table>
       <ConfirmDelete deleteRef={deleteModalRef} deleteClose={confirmDelete} />
-      <EditTask updateRef={updateModalRef} updateClose={closeUpdation} display={showDetails} showId={selectId}/>
+      <EditTask updateRef={updateModalRef} updateClose={closeUpdateModal} display={showDetails} selectId={selectId} />
+    </div>
     </div>
   );
 };
