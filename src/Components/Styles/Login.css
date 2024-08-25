@@ -1,0 +1,74 @@
+#login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: none;
+    border-radius: 7px;
+    box-shadow: 10px 10px 20px 5px grey;
+    padding: 30px;
+    width: 400px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+#Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 350px;
+}
+
+#loginHead {
+    margin: 0px;
+    color: red;
+    font-size: xx-large;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+#loginInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#emailInput {
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 250px;
+    padding: 0 15px;
+    font-family: 'Times New Roman', Times, serif;
+    background: transparent;
+    color: black;
+    outline: none;
+}
+
+#passwordInput {
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 250px;
+    padding: 0 15px;
+    font-family: 'Times New Roman', Times, serif;
+    background: transparent;
+    color: black;
+    outline: none;
+}
+
+#loginBtn2 {
+    font-size: larger;
+    background-color: red;
+    color: white;
+    height: 35px;
+    width: 150px;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}

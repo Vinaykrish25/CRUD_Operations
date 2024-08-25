@@ -1,23 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import FrontPage from "./Components/FrontPage";
+import Layout from "./Components/Layout/Layout";
+import Login from "./Components/Login";
+import { ThemeContext } from "./Context/ThemeContext";
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Register from "./Components/Register";
+import TaskManager from "./Components/TaskManager";
 
 function App() {
+
+  const [fontcolor, setFontcolor] = useState("black")
+    const [bodycolor, setBodycolor] = useState("white")
+    const [headercolor, setHeadercolor] = useState("red")
+    const [buttoncolor, setButtoncolor] = useState("red")
+    const [border, setBorder] = useState("rgb(0, 249, 166)")
+    const [thead, setThead] = useState("aquamarine")
+
+    function changetheme(){
+    if(bodycolor === "white"){
+        setBodycolor("#1E201E")
+        setButtoncolor("white")
+        setFontcolor("white")
+        setHeadercolor("#1E201E")
+        setBorder("white")
+        setThead("white")
+    }
+    else{
+        setBodycolor("white")
+        setButtoncolor("red")
+        setFontcolor("black")
+        setHeadercolor("red")
+        setBorder("rgb(0, 249, 166)")
+        setThead("aquamarine")
+    }
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeContext.Provider value={{changetheme, fontcolor, bodycolor, headercolor, buttoncolor}}>
+        <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route path="/" element={<FrontPage/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/register" element={<Register/>}/>
+            <Route path="/taskmanager" element={<TaskManager/>}/>
+          </Route>
+        </Routes>
+        </BrowserRouter>
+      </ThemeContext.Provider>
     </div>
   );
 }

@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 100vh;
+}
+.container h1{
+    font-size: 40px;
+    text-align: center;
+}
+.but{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.but-1{
+    width: 200px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background-color: red;
+    cursor: pointer;
+    color: black;
+    font-weight: 700;
+    font-size: 15px;
+}
+.but-2{
+    width: 200px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    background-color: rgb(206, 217, 227);
+    font-weight: 700;
+    font-size: 15px;
+}

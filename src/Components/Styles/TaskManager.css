@@ -1,0 +1,44 @@
+table,tr,th,td{
+    padding: 10px;
+    align-items: center;
+}
+
+table,tr,td,th{
+    border: 2px solid rgb(0, 249, 166);
+    border-collapse: collapse;
+}
+th{
+    background-color: aquamarine;
+}
+
+
+#delete,table,tr{
+    border: none;
+}
+
+#edit{
+    color: green;
+}
+
+#edit,table,tr{
+    border: none;
+}
+
+.task-table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#delete-button{
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+#edit-button{
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
